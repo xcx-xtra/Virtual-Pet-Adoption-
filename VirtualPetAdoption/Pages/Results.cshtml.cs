@@ -19,8 +19,8 @@ namespace VirtualPetAdoption.Pages
         [BindProperty(SupportsGet = true)]
         public int UserId { get; set; }
 
-        public Pet Pet { get; set; }
-        public User User { get; set; }
+        public Pet? Pet { get; set; }
+        public new User? User { get; set; }
 
         public async Task<IActionResult> OnGetAsync()
         {
