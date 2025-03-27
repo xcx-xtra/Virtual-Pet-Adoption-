@@ -1,0 +1,48 @@
+@page
+@model VirtualPetAdoption.Pages.QuizModel
+@{
+    ViewData["Title"] = "Pet Matching Quiz";
+}
+
+<div class="container">
+    <h1>Find Your Perfect Virtual Pet</h1>
+    <p>Answer these questions to find your ideal pet companion!</p>
+
+    <form method="post">
+        <div class="form-group mb-4">
+            <label>Your Name:</label>
+            <input asp-for="User.Name" class="form-control" required>
+        </div>
+
+        <div class="form-group mb-4">
+            <label>Email:</label>
+            <input asp-for="User.Email" type="email" class="form-control" required>
+        </div>
+
+        <h3 class="mt-4">Personality Questions</h3>
+
+        <div class="form-group mb-4">
+            <label>How much playfulness do you want in your pet? (1=Not much, 5=Very playful)</label>
+            <select asp-for="User.PreferredPlayfulness" class="form-control">
+                <option value="1">1 - Not much</option>
+                <option value="2">2</option>
+                <option value="3">3 - Moderate</option>
+                <option value="4">4</option>
+                <option value="5">5 - Very playful</option>
+            </select>
+        </div>
+
+        <div class="form-group mb-4">
+            <label>How affectionate should your pet be? (1=Independent, 5=Very cuddly)</label>
+            <select asp-for="User.PreferredAffection" class="form-control">
+                <option value="1">1 - Independent</option>
+                <option value="2">2</option>
+                <option value="3">3 - Moderately affectionate</option>
+                <option value="4">4</option>
+                <option value="5">5 - Very cuddly</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Find My Pet Match!</button>
+    </form>
+</div>
